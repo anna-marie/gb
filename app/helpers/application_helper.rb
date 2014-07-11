@@ -6,7 +6,11 @@ module ApplicationHelper
     if page_title.empty?
       base_title
     else
-      "#{base_title} | #{page_title}"
+      "#{page_title} | #{base_title}"
     end
+  end
+  
+  def this_page(path)
+    "current" if current_page?(path)
   end
 end

@@ -101,11 +101,11 @@ describe "Authentication" do
       end
     end
 	
-    describe "as non-admin user" do
+    describe "as non-superadmin user" do
       let(:user) { FactoryGirl.create(:user) }
-      let(:non_admin) { FactoryGirl.create(:user) }
+      let(:non_superadmin) { FactoryGirl.create(:user) }
 
-      before { sign_in non_admin, no_capybara: true }
+      before { sign_in non_superadmin, no_capybara: true }
 
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }

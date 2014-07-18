@@ -125,7 +125,7 @@ describe "Authentication" do
 	  describe "visiting the user page" do
 	    before { get users_path(user) }
         specify { expect(response).to redirect_to(root_url) }
-      end		
+      end	
     end
   end
 end

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user,  only: [:index, :edit, :update, :destroy]
+  before_action :signed_in_user,  only: [:index, :edit, :update, :destroy, :make_admin,
+                                         :make_superadmin]
   before_action :correct_user,    only: [:edit, :update]
-  before_action :superadmin_user, only: [:index, :destroy]
+  before_action :superadmin_user, only: [:index, :destroy, :make_admin, :make_superadmin]
   
   def index
     @users = User.paginate(page: params[:page])
@@ -25,13 +26,14 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
   def edit
     @user = User.find(params[:id])
   end
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Profile updated."
       redirect_to @user
     else
       render 'edit'
@@ -42,6 +44,25 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
     redirect_to users_url
+  end
+  
+  def make_admin
+    if User.find(params[:id]).update_attribute(:admin, true)
+      flash[:success] = "User is now an admin."
+      redirect_to users_url
+	else
+	  render 'edit'  
+	end
+  end
+  
+  def make_superadmin
+    if User.find(params[:id]).update_attribute(:superadmin, true) && 
+	                  User.find(params[:id]).update_attribute(:admin, true)
+      flash[:success] = "User is now a superadmin."
+      redirect_to users_url
+	else
+	  render 'edit'  
+	end
   end
 
   private
@@ -70,9 +91,6 @@ class UsersController < ApplicationController
     end
 	
     def superadmin_user
-	  unless current_user.superadmin?
-        store_location
-        redirect_to(root_url)
-      end
+      redirect_to(root_url) unless current_user.superadmin?
     end
 end

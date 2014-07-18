@@ -5,6 +5,7 @@ namespace :db do
                          email: "example@railstutorial.org",
                          password: "foobar",
                          password_confirmation: "foobar",
+						 admin: true,
                          superadmin: true)
     admin = User.create!(name: "Anna-Marie Krahn",
                          email: "arkrahn@shaw.ca",

@@ -1,5 +1,10 @@
 Gb::Application.routes.draw do
-  resources :users
+  resources :users do
+    member do
+	  put :make_admin
+	  put :make_superadmin
+	end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'

@@ -8,6 +8,7 @@ gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'bootstrap-will_paginate', '0.0.9'
+gem "simple_form", "~> 3.0.2"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

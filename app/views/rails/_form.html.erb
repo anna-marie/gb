@@ -1,0 +1,29 @@
+<%= form_for(@rail) do |f| %>
+  <% if @rail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rail.errors.count, "error") %> prohibited this rail from being saved:</h2>
+
+      <ul>
+      <% @rail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :destroy %><br>
+    <%= f.text_field :destroy %>
+  </div>
+  <div class="field">
+    <%= f.label :scaffold %><br>
+    <%= f.text_field :scaffold %>
+  </div>
+  <div class="field">
+    <%= f.label :LightOptions %><br>
+    <%= f.text_field :LightOptions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

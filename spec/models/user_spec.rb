@@ -18,10 +18,11 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:superadmin) }
+  it { should respond_to(:plants) }
 
   it { should be_valid }
   it { should_not be_admin }
-  it { should_not be_admin }
+  it { should_not be_superadmin }
 
   describe "with admin attribute set to 'true'" do
     before do
@@ -136,5 +137,29 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+  
+  describe "plant associations" do
+
+    before { @user.save }
+    let!(:older_plant) do
+      FactoryGirl.create(:plant, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_plant) do
+      FactoryGirl.create(:plant, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right plants in the right order" do
+      expect(@user.plants.to_a).to eq [newer_plant, older_plant]
+    end
+	
+    it "should not destroy associated plants" do
+      plants = @user.plants.to_a
+      @user.destroy
+      expect(plants).not_to be_empty
+      plants.each do |plant|
+        expect(Plant.where(id: plant.id)).not_to be_empty
+      end
+    end
   end
 end

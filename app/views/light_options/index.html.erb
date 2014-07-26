@@ -1,0 +1,27 @@
+<h1>Listing light_options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @light_options.each do |light_option| %>
+      <tr>
+        <td><%= light_option.content %></td>
+        <td><%= link_to 'Show', light_option %></td>
+        <td><%= link_to 'Edit', edit_light_option_path(light_option) %></td>
+        <td><%= link_to 'Destroy', light_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Light option', new_light_option_path %>

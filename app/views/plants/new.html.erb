@@ -1,0 +1,169 @@
+<% provide(:title, 'Add a plant') %>
+<h1>Add a plant</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= simple_form_for(@plant) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+	  
+	  <%= f.input :common_name, input_html: { maxlength: 80 }, label: "Common name",    
+	                label_html: { class: 'labels'} %>
+	  
+	  <%= f.input :sci_name, input_html: { maxlength: 80 }, label: "Scientific name",    
+	                label_html: { class: 'labels' } %>
+	  
+	  <%= f.input :layer_id, collection: @layers, label_method: :content, value_method: :id, label: "Guild layer", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :layer2_id, collection: @layers, label_method: :content, value_method: :id, label: "Guild layer 2 (if applicable because of height range)", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :us_zone_max, collection: 0..12, label: "USDA zone", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :cdn_zone_max, collection: 0..8, label: "Canadian zone", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :type_id, collection: @types, label_method: :content, value_method: :id, label: "Type", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :light_id, collection: @lighting, label_method: :content, value_method: :id, label: "Light", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :ph_min, collection: 0..14, label: "Ideal minimum pH", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :ph_max, collection: 0..14, label: "Ideal maximum pH", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
+	  
+	  <%= f.input :height_min, input_html: { maxlength: 3 }, label: "Minimum height (metres)",    
+	                label_html: { class: 'labels'} %>
+	  
+	  <%= f.input :height_max, input_html: { maxlength: 3 }, label: "Maximum height (metres)", label_html: { class: 'labels'} %>
+	  
+	  <%= f.input :drought_resistant, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Drought Resistant", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_n_fixer, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Nitrogen fixer", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_biomass, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Biomass", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_hedgerow, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Hedgerow", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_nutrient_accumulator, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Nutrient accumulator", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_cover_crop, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Cover crop", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_windbreak, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Windbreak", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_mulch, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Windbreak", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_repel_pests, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Repels pests", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_repel_invaders, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Repels invaders", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :p_taproot, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Taproot", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_edible, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Edible", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_medicinal, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Medicinal", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_oil, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for oil", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_tea, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for tea", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_basket, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for basketry", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_dye, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for dye", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_fibre, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use fibres", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_fragrance, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for fragrance", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_gourd, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Gourd", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_poles, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for poles", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_polish, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for polish", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_repellent, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for repellant", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_soap, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use in soap", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :h_wood, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use for wood", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_air_purifier, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use to purify air", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_erosion_control, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use to control erosion", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_fire_retardant, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use as fire retardant", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_flood_management, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use to manage flooding", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_toxin_absorber, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Absorbs toxins", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :e_water_purifier, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Use to purify water", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :description, as: :text, input_html: { maxlength: 3000 }, 
+	                        label: "Other information", label_html: { class: 'labels'} %>
+	  
+	  <%= f.input :sources, as: :text, input_html: { maxlength: 500 }, 
+	                        label: "Sources", label_html: { class: 'labels'} %>
+
+      <%= f.submit "Create new plant", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

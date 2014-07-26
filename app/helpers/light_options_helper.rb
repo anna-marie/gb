@@ -1,0 +1,2 @@
+module LightOptionsHelper
+end

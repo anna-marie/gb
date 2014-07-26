@@ -1,0 +1,31 @@
+<h1>Listing rails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Destroy</th>
+      <th>Scaffold</th>
+      <th>Lightoptions</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rails.each do |rail| %>
+      <tr>
+        <td><%= rail.destroy %></td>
+        <td><%= rail.scaffold %></td>
+        <td><%= rail.LightOptions %></td>
+        <td><%= link_to 'Show', rail %></td>
+        <td><%= link_to 'Edit', edit_rail_path(rail) %></td>
+        <td><%= link_to 'Destroy', rail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rail', new_rail_path %>

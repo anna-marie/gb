@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725024326) do
+ActiveRecord::Schema.define(version: 20140726231614) do
 
   create_table "layers", force: true do |t|
     t.string   "content"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140725024326) do
     t.integer  "user_id"
     t.string   "common_name",                        null: false
     t.string   "sci_name",                           null: false
-    t.float    "us_zone_max"
-    t.float    "cdn_zone_max"
+    t.integer  "us_zone_max"
+    t.integer  "cdn_zone_max"
     t.integer  "ecozone"
     t.integer  "type_id"
     t.integer  "light_id"

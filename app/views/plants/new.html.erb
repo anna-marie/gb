@@ -28,10 +28,10 @@
 	  
 	  <%= f.input :ph_max, collection: 0..14, label: "Ideal maximum pH", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
 	  
-	  <%= f.input :height_min, input_html: { maxlength: 3 }, label: "Minimum height (metres)",    
+	  <%= f.input :height_min, input_html: { maxlength: 4 }, label: "Minimum height (metres)",    
 	                label_html: { class: 'labels'} %>
 	  
-	  <%= f.input :height_max, input_html: { maxlength: 3 }, label: "Maximum height (metres)", label_html: { class: 'labels'} %>
+	  <%= f.input :height_max, input_html: { maxlength: 4 }, label: "Maximum height (metres)", label_html: { class: 'labels'} %>
 	  
 	  <%= f.input :drought_resistant, as: :radio_buttons, 
 	                        collection: [['Yes', true], ['No', false]], label: "Drought Resistant", label_html: { class: 'labels'}, 

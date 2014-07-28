@@ -1,14 +1,4 @@
 Gb::Application.routes.draw do
-  resources :layers
-
-  resources :rails
-
-  resources :lights
-
-  resources :light_options
-
-  resources :types
-
   resources :users do
     member do
 	  put :make_admin
@@ -17,6 +7,11 @@ Gb::Application.routes.draw do
   end
   resources :plants
   resources :sessions, only: [:new, :create, :destroy]
+  resources :layers
+  resources :rails
+  resources :lights
+  resources :light_options
+  resources :types
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

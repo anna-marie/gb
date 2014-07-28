@@ -2,6 +2,14 @@ class PlantsController < ApplicationController
   before_action :signed_in_user
   before_action :admin_or_superadmin_user
   before_filter :prepare_categories
+  
+  def show
+    @plant = Plant.find(params[:id])
+  end
+  
+  def new
+    @plant = Plant.new
+  end
 
   def create
     @plant = current_user.plants.build(plant_params)
@@ -11,10 +19,6 @@ class PlantsController < ApplicationController
     else
       render 'new'
     end
-  end
-  
-  def new
-    @plant = Plant.new
   end
 
   def destroy

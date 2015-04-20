@@ -3,8 +3,12 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= @plant.common_name %> (<em><%= @plant.sci_name %></em>) 
+        <%= @plant.common_name %> (<em><%= @plant.genus %> <%= @plant.species %></em>) 
       </h1>
+	  <hr />
+	  <% if current_user.superadmin? || current_user.admin? %>
+	    <p><%= link_to "Add a Plant", add_plant_path %></p>
+      <% end %>
     </section>
   </aside>
 </div>

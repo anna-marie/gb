@@ -1,0 +1,113 @@
+[33mcommit 72f374d3c7d497ad787eb5464f8423799d563389[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sun Jul 27 21:12:46 2014 -0700
+
+    Make basic plant page
+
+[33mcommit b9c02653323ac08f96606be8a702211d89426d95[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sun Jul 27 15:48:12 2014 -0700
+
+    Finish adding new plant form
+
+[33mcommit 911a9c8225e43093d7db4c20e34dcda1a815f2e2[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Fri Jul 25 20:48:24 2014 -0700
+
+    Add plants
+
+[33mcommit 8beafae1cdd5b7f8cfdf370131fb5b941b51661e[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Fri Jul 18 17:08:42 2014 -0700
+
+    Add necessary links
+
+[33mcommit 477af69a5aaf5a0432fda7b685650b2705ebcf6a[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Fri Jul 18 16:47:51 2014 -0700
+
+    Make it possible to create admin and superadmin users
+
+[33mcommit dd32f775daa1eb284403cea7afc17c92216bde69[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Fri Jul 18 14:11:29 2014 -0700
+
+    Make user index accessible only to superadmins
+
+[33mcommit 985a01d72c47f2f9c8b508c8dacb876a0a4004de[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Thu Jul 17 11:57:05 2014 -0700
+
+    Add superadmin user and demote admin
+
+[33mcommit 5afa9ea4e33fdd3cbb1203b8654b78f6d3d29e9d[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Tue Jul 15 14:33:50 2014 -0700
+
+    Fixed sample user problem
+
+[33mcommit 6604ab3ed77e247bc3c66f20f5443ac20128bb48[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Tue Jul 15 14:12:47 2014 -0700
+
+    Finish user edit, update, index, and destroy actions
+
+[33mcommit 5a21bccd7bfd92f6d2ea5220d10382c2b57dd94f[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Mon Jul 14 16:53:08 2014 -0700
+
+    Finish sign in
+
+[33mcommit 46a94139c00120adcff89acccc56991d32038a58[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sat Jul 12 19:53:09 2014 -0700
+
+    Add SSL in production
+
+[33mcommit 4e6b4a0d3f3c3d6037dc3f514f3f33a9d6b87ae2[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sat Jul 12 19:51:04 2014 -0700
+
+    Finish user signup
+
+[33mcommit 3e81e6a53864df5444973baa33c85f778713dc72[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sat Jul 12 17:15:03 2014 -0700
+
+    Make a basic User model (including secure passwords
+
+[33mcommit 810199039a650a30195f45ff8f74d53197da014b[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Thu Jul 10 19:28:44 2014 -0700
+
+    Finish layout and routes
+
+[33mcommit a24cda6701c198107a70b3548e4079a8bf85f89e[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Tue Jul 8 14:19:43 2014 -0700
+
+    Add a full_title helper
+
+[33mcommit b01622b7ac86b7b95fc9b71f4551945e03abd0e0[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Tue Jul 8 13:38:36 2014 -0700
+
+    Finish static pages
+
+[33mcommit 85b380125385fa491f07ec1e9e50fba25266c0db[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Mon Jul 7 14:15:46 2014 -0700
+
+    Add a StaticPages controller
+
+[33mcommit 2dac4a239da5d2befd3d3871820aabc4370eb45a[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sun Jul 6 22:03:14 2014 -0700
+
+    Improve the README
+
+[33mcommit 9b419c69a461260196b9af91d48121d2d930e373[m
+Author: Anna-Marie <arkrahn@shaw.ca>
+Date:   Sun Jul 6 21:45:29 2014 -0700
+
+    Initial commit

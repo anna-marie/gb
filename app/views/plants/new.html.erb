@@ -9,7 +9,10 @@
 	  <%= f.input :common_name, input_html: { maxlength: 80 }, label: "Common name",    
 	                label_html: { class: 'labels'} %>
 	  
-	  <%= f.input :sci_name, input_html: { maxlength: 80 }, label: "Scientific name",    
+	  <%= f.input :genus, input_html: { maxlength: 80 }, label: "Genus",    
+	                label_html: { class: 'labels' } %>
+	  
+	  <%= f.input :species, input_html: { maxlength: 80 }, label: "Species",    
 	                label_html: { class: 'labels' } %>
 	  
 	  <%= f.input :layer_id, collection: @layers, label_method: :content, value_method: :id, label: "Guild layer", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
@@ -23,15 +26,6 @@
 	  <%= f.input :type_id, collection: @types, label_method: :content, value_method: :id, label: "Type", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
 	  
 	  <%= f.input :light_id, collection: @lighting, label_method: :content, value_method: :id, label: "Light", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
-	  
-	  <%= f.input :ph_min, collection: 0..14, label: "Ideal minimum pH", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
-	  
-	  <%= f.input :ph_max, collection: 0..14, label: "Ideal maximum pH", label_html: { class: 'labels' }, :include_blank => "Unknown" %>
-	  
-	  <%= f.input :height_min, input_html: { maxlength: 4 }, label: "Minimum height (metres)",    
-	                label_html: { class: 'labels'} %>
-	  
-	  <%= f.input :height_max, input_html: { maxlength: 4 }, label: "Maximum height (metres)", label_html: { class: 'labels'} %>
 	  
 	  <%= f.input :drought_resistant, as: :radio_buttons, 
 	                        collection: [['Yes', true], ['No', false]], label: "Drought Resistant", label_html: { class: 'labels'}, 
@@ -62,7 +56,7 @@
 							item_wrapper_class: 'inline' %>
 	  
 	  <%= f.input :p_mulch, as: :radio_buttons, 
-	                        collection: [['Yes', true], ['No', false]], label: "Windbreak", label_html: { class: 'labels'}, 
+	                        collection: [['Yes', true], ['No', false]], label: "Mulch", label_html: { class: 'labels'}, 
 							item_wrapper_class: 'inline' %>
 	  
 	  <%= f.input :p_repel_pests, as: :radio_buttons, 
@@ -79,6 +73,26 @@
 	  
 	  <%= f.input :h_edible, as: :radio_buttons, 
 	                        collection: [['Yes', true], ['No', false]], label: "Edible", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :a_poultry, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Poultry Feed", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :a_feed, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Animal Feed", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :a_habitat, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Animal Habitat", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :a_insects, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Beneficial Insect Attractor", label_html: { class: 'labels'}, 
+							item_wrapper_class: 'inline' %>
+	  
+	  <%= f.input :a_hummingbirds, as: :radio_buttons, 
+	                        collection: [['Yes', true], ['No', false]], label: "Hummingbird Attractor", label_html: { class: 'labels'}, 
 							item_wrapper_class: 'inline' %>
 	  
 	  <%= f.input :h_medicinal, as: :radio_buttons, 

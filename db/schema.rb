@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726231614) do
+ActiveRecord::Schema.define(version: 20150420055600) do
 
   create_table "layers", force: true do |t|
     t.string   "content"
@@ -27,15 +27,11 @@ ActiveRecord::Schema.define(version: 20140726231614) do
 
   create_table "plants", force: true do |t|
     t.integer  "user_id"
-    t.string   "common_name",                        null: false
-    t.string   "sci_name",                           null: false
+    t.string   "common_name",                           null: false
     t.integer  "us_zone_max"
     t.integer  "cdn_zone_max"
-    t.integer  "ecozone"
     t.integer  "type_id"
     t.integer  "light_id"
-    t.integer  "ph_min"
-    t.integer  "ph_max"
     t.float    "height_min"
     t.float    "height_max"
     t.boolean  "drought_resistant"
@@ -74,11 +70,46 @@ ActiveRecord::Schema.define(version: 20140726231614) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "leaves_id"
-    t.integer  "layer_id",               default: 0, null: false
+    t.integer  "layer_id",                  default: 0, null: false
     t.integer  "layer2_id"
+    t.string   "family"
+    t.string   "genus",                                 null: false
+    t.string   "species"
+    t.string   "subspecies"
+    t.integer  "spread_min"
+    t.integer  "spread_max"
+    t.integer  "cdn_zone_min"
+    t.integer  "us_zone_min"
+    t.integer  "rhs_zone_min"
+    t.integer  "rhs_zone_max"
+    t.integer  "origin_id"
+    t.string   "native_to"
+    t.integer  "habitat_id"
+    t.integer  "moisture_id"
+    t.integer  "fertility_id"
+    t.integer  "salt_tolerance_id"
+    t.integer  "ph_id"
+    t.boolean  "has_jugolones"
+    t.boolean  "tolerates_jugolones"
+    t.boolean  "susceptible_to_jugolones"
+    t.boolean  "p_ground_cover"
+    t.boolean  "n_allelopathic"
+    t.boolean  "n_dispersive"
+    t.boolean  "n_expansive"
+    t.boolean  "n_hay_fever"
+    t.boolean  "n_persistent"
+    t.boolean  "n_sprawling_vigorous_vine"
+    t.boolean  "n_stings"
+    t.boolean  "n_spiny_thorny"
+    t.boolean  "n_poisonous"
+    t.boolean  "a_poultry"
+    t.boolean  "a_feed"
+    t.boolean  "a_habitat"
+    t.boolean  "a_insects"
+    t.boolean  "a_hummingbirds"
   end
 
-  add_index "plants", ["us_zone_max", "cdn_zone_max", "ecozone", "type_id", "light_id", "common_name", "sci_name"], name: "main_index"
+  add_index "plants", ["us_zone_max", "cdn_zone_max", "type_id", "light_id", "common_name"], name: "main_index"
 
   create_table "rails", force: true do |t|
     t.string   "destroy"

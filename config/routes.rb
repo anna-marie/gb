@@ -14,6 +14,7 @@ Gb::Application.routes.draw do
   resources :types
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/add_plant',to: 'plants#new',          via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/signup',  to: 'users#new',            via: 'get'
